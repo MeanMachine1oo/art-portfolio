@@ -205,8 +205,8 @@ export default async function ArtworkDetailPage({
             paddingLeft: "32px",
           }}
         >
-          <MetaRow label="Year" value={String(artwork.year)} />
-          <MetaRow label="Medium" value={artwork.medium} />
+          {artwork.year && <MetaRow label="Year" value={String(artwork.year)} />}
+          {artwork.medium && <MetaRow label="Medium" value={artwork.medium} />}
           {artwork.dimensions && (
             <MetaRow label="Dimensions" value={artwork.dimensions} />
           )}
