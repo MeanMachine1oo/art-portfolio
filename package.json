@@ -11,11 +11,9 @@
   "dependencies": {
     "@sanity/client": "^6.15.0",
     "@sanity/image-url": "^1.2.0",
-    "@sanity/vision": "^5.13.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18",
-    "sanity": "^5.13.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
