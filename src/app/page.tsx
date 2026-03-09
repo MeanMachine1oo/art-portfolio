@@ -398,7 +398,7 @@ export default async function Home() {
                 return (
                   <Link
                     key={artwork._id}
-                    href={`/work/${artwork.slug?.current ?? artwork._id}`}
+                    href={`/gallery/${artwork.slug?.current ?? artwork._id}`}
                     className="artwork-card"
                   >
                     <div className="artwork-card__image-wrap">
