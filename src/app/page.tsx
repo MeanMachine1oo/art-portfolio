@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // ─── Sanity client (server-side only) ────────────────────────────────────────
 const client = createClient({
-  projectId: "cpmtvctn",
+  projectId: "xlk3jht1",
   dataset: "production",
   apiVersion: "2024-01-01",
   useCdn: true,
