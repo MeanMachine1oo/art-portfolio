@@ -1,0 +1,354 @@
+/* ============================================================
+   WILDCARD DESIGN — Design Tokens
+   Based on wildcarddesign.in (Nitin Jarath portfolio)
+   Refined Editorial Art Gallery aesthetic
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   COLOUR PALETTE
+   ------------------------------------------------------------ */
+   :root {
+    /* Core */
+    --color-bg:              #F6F9F5;   /* warm off-white / gallery wall */
+    --color-surface:         #EEEEE9;   /* subtle card / section tint */
+    --color-text:            #091405;   /* near-black, deep forest ink */
+    --color-text-secondary:  #3D4A3A;   /* muted body copy */
+    --color-text-tertiary:   #7A8876;   /* captions, metadata, labels */
+    --color-border:          #D4D9D2;   /* hairline rules, separators */
+    --color-border-strong:   #B0B8AE;   /* stronger dividers */
+  
+    /* Accent */
+    --color-accent:          #1D2CF3;   /* electric blue — CTAs, hover states, links */
+    --color-accent-hover:    #0D1CC8;   /* darkened accent on hover */
+    --color-accent-subtle:   #E8EAFE;   /* tinted accent wash */
+  
+    /* Utility */
+    --color-white:           #FFFFFF;
+    --color-black:           #000000;
+    --color-overlay:         rgba(9, 20, 5, 0.40);  /* image overlays */
+    --color-scrim:           rgba(9, 20, 5, 0.06);  /* subtle section tints */
+  }
+  
+  /* ------------------------------------------------------------
+     TYPOGRAPHY
+     ------------------------------------------------------------ */
+  :root {
+    /* Families */
+    --font-display:  'Sora', 'Helvetica Neue', sans-serif;
+    --font-body:     'Sora', 'Helvetica Neue', sans-serif;
+    --font-mono:     'JetBrains Mono', 'Courier New', monospace;
+  
+    /* Scale — fluid via clamp() */
+    --text-xs:   clamp(0.625rem,  0.6rem  + 0.1vw, 0.6875rem); /* 10–11px  — badge, tag  */
+    --text-sm:   clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);  /* 11–12px  — caption     */
+    --text-base: clamp(0.8125rem, 0.78rem + 0.17vw, 0.875rem); /* 13–14px  — body copy   */
+    --text-md:   clamp(0.9375rem, 0.9rem  + 0.2vw,  1rem);     /* 15–16px  — lead / UI   */
+    --text-lg:   clamp(1rem,      0.95rem + 0.3vw,  1.125rem); /* 16–18px  — sub-heading */
+    --text-xl:   clamp(1.125rem,  1rem    + 0.5vw,  1.375rem); /* 18–22px  — section h3  */
+    --text-2xl:  clamp(1.375rem,  1.2rem  + 0.8vw,  1.75rem);  /* 22–28px  — section h2  */
+    --text-3xl:  clamp(1.75rem,   1.4rem  + 1.2vw,  2.5rem);   /* 28–40px  — page h2     */
+    --text-4xl:  clamp(2.25rem,   1.6rem  + 2vw,    3.5rem);   /* 36–56px  — hero h1     */
+    --text-5xl:  clamp(3rem,      2rem    + 3vw,    5rem);     /* 48–80px  — display     */
+  
+    /* Weight */
+    --weight-light:   300;
+    --weight-regular: 400;
+    --weight-medium:  500;
+    --weight-semibold:600;
+    --weight-bold:    700;
+  
+    /* Leading (line-height) */
+    --leading-tight:  1.1;
+    --leading-snug:   1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed:1.65;
+    --leading-loose:  1.8;
+  
+    /* Tracking (letter-spacing) */
+    --tracking-tight:  -0.03em;
+    --tracking-snug:   -0.01em;
+    --tracking-normal:  0em;
+    --tracking-wide:    0.05em;
+    --tracking-wider:   0.1em;
+    --tracking-widest:  0.18em;
+  }
+  
+  /* ------------------------------------------------------------
+     SPACING SCALE
+     Based on an 8 px base unit
+     ------------------------------------------------------------ */
+  :root {
+    --space-1:   4px;
+    --space-2:   8px;
+    --space-3:  12px;
+    --space-4:  16px;
+    --space-5:  20px;
+    --space-6:  24px;
+    --space-8:  32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+    --space-32: 128px;
+    --space-40: 160px;
+  
+    /* Section rhythm */
+    --section-gap:       clamp(60px, 8vw, 120px);
+    --section-gap-lg:    clamp(80px, 12vw, 160px);
+    --section-gap-sm:    clamp(32px, 5vw, 64px);
+  }
+  
+  /* ------------------------------------------------------------
+     LAYOUT & GRID
+     ------------------------------------------------------------ */
+  :root {
+    /* Max widths */
+    --container-sm:   560px;
+    --container-md:   768px;
+    --container-lg:   960px;
+    --container-xl:  1200px;
+    --container-full:100%;
+  
+    /* Page padding (horizontal) */
+    --page-gutter: clamp(20px, 5vw, 80px);
+  
+    /* Content column (matches Wix narrow editorial column) */
+    --content-max-width: 680px;
+  
+    /* Grid columns */
+    --grid-cols-2: repeat(2, 1fr);
+    --grid-cols-3: repeat(3, 1fr);
+    --grid-gap:    clamp(16px, 3vw, 40px);
+  
+    /* Navbar height */
+    --nav-height: 56px;
+  }
+  
+  /* ------------------------------------------------------------
+     BORDER RADIUS
+     ------------------------------------------------------------ */
+  :root {
+    --radius-none: 0px;
+    --radius-sm:   2px;
+    --radius-md:   4px;
+    --radius-lg:   8px;
+    --radius-xl:  16px;
+    --radius-full: 9999px;
+  
+    /* Dominant style: mostly sharp/flat with very subtle rounding */
+    --radius-card:    var(--radius-none);  /* project cards — flat */
+    --radius-button:  var(--radius-none);  /* CTA buttons — flat */
+    --radius-badge:   var(--radius-sm);
+    --radius-image:   var(--radius-none);
+  }
+  
+  /* ------------------------------------------------------------
+     BORDERS
+     ------------------------------------------------------------ */
+  :root {
+    --border-width:       1px;
+    --border-style:       solid;
+    --border-default:     1px solid var(--color-border);
+    --border-strong:      1px solid var(--color-border-strong);
+    --border-accent:      1px solid var(--color-accent);
+  
+    /* Section divider — the thin hairline between content blocks */
+    --divider: 1px solid var(--color-border);
+  }
+  
+  /* ------------------------------------------------------------
+     SHADOWS & ELEVATION
+     (Very restrained — editorial sites avoid heavy shadows)
+     ------------------------------------------------------------ */
+  :root {
+    --shadow-none: none;
+    --shadow-xs:   0 1px  2px rgba(9, 20, 5, 0.04);
+    --shadow-sm:   0 2px  6px rgba(9, 20, 5, 0.06);
+    --shadow-md:   0 4px 16px rgba(9, 20, 5, 0.08);
+    --shadow-lg:   0 8px 32px rgba(9, 20, 5, 0.10);
+  
+    /* Accent glow for hover states */
+    --shadow-accent: 0 0 0 2px var(--color-accent);
+  }
+  
+  /* ------------------------------------------------------------
+     TRANSITIONS & ANIMATION
+     ------------------------------------------------------------ */
+  :root {
+    --duration-fast:    150ms;
+    --duration-normal:  250ms;
+    --duration-slow:    400ms;
+    --duration-slower:  600ms;
+  
+    --ease-default:     cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in:          cubic-bezier(0.4, 0, 1, 1);
+    --ease-out:         cubic-bezier(0, 0, 0.2, 1);
+    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+    --transition-default: all var(--duration-normal) var(--ease-default);
+    --transition-color:   color var(--duration-fast) var(--ease-default),
+                          background-color var(--duration-fast) var(--ease-default);
+    --transition-transform: transform var(--duration-normal) var(--ease-out);
+  }
+  
+  /* ------------------------------------------------------------
+     Z-INDEX SCALE
+     ------------------------------------------------------------ */
+  :root {
+    --z-behind:  -1;
+    --z-base:     0;
+    --z-raised:   10;
+    --z-overlay:  100;
+    --z-nav:      200;
+    --z-modal:    300;
+    --z-toast:    400;
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — NAV
+     ------------------------------------------------------------ */
+  :root {
+    --nav-bg:               var(--color-bg);
+    --nav-text:             var(--color-text);
+    --nav-link-hover:       var(--color-accent);
+    --nav-border-bottom:    var(--border-default);
+    --nav-font-size:        var(--text-sm);
+    --nav-font-weight:      var(--weight-regular);
+    --nav-letter-spacing:   var(--tracking-wider);
+    --nav-text-transform:   uppercase;
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — PROJECT CARD (work list)
+     ------------------------------------------------------------ */
+  :root {
+    --card-bg:              transparent;
+    --card-border-top:      var(--border-default);
+    --card-padding-v:       var(--space-10);
+    --card-image-width:     clamp(80px, 10vw, 120px);
+    --card-image-aspect:    3 / 2;
+    --card-title-size:      var(--text-md);
+    --card-meta-size:       var(--text-sm);
+    --card-meta-color:      var(--color-text-tertiary);
+    --card-year-color:      var(--color-text-tertiary);
+    --card-link-color:      var(--color-text-tertiary);
+    --card-link-hover:      var(--color-accent);
+    --card-hover-bg:        var(--color-scrim);
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — BODY COPY & EDITORIAL
+     ------------------------------------------------------------ */
+  :root {
+    --body-font:            var(--font-body);
+    --body-size:            var(--text-base);
+    --body-weight:          var(--weight-regular);
+    --body-leading:         var(--leading-relaxed);
+    --body-color:           var(--color-text);
+  
+    --lead-size:            var(--text-md);
+    --lead-leading:         var(--leading-loose);
+  
+    --heading-font:         var(--font-display);
+    --heading-weight:       var(--weight-light);
+    --heading-leading:      var(--leading-tight);
+    --heading-tracking:     var(--tracking-snug);
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — BUTTONS / CTAs
+     ------------------------------------------------------------ */
+  :root {
+    --btn-font:             var(--font-body);
+    --btn-size:             var(--text-sm);
+    --btn-weight:           var(--weight-regular);
+    --btn-tracking:         var(--tracking-wider);
+    --btn-transform:        uppercase;
+    --btn-padding:          var(--space-3) var(--space-6);
+    --btn-radius:           var(--radius-button);
+  
+    /* Primary (accent fill) */
+    --btn-primary-bg:       var(--color-accent);
+    --btn-primary-text:     var(--color-white);
+    --btn-primary-hover-bg: var(--color-accent-hover);
+  
+    /* Ghost / outline */
+    --btn-ghost-bg:         transparent;
+    --btn-ghost-text:       var(--color-text);
+    --btn-ghost-border:     var(--border-strong);
+    --btn-ghost-hover-bg:   var(--color-scrim);
+  
+    /* Text link variant */
+    --btn-link-text:        var(--color-text-tertiary);
+    --btn-link-hover:       var(--color-accent);
+    --btn-link-underline:   1px solid currentColor;
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — SECTION LABELS
+     ("Select Work & Experience", "Key Outcomes", etc.)
+     ------------------------------------------------------------ */
+  :root {
+    --label-font:           var(--font-body);
+    --label-size:           var(--text-xs);
+    --label-weight:         var(--weight-regular);
+    --label-tracking:       var(--tracking-widest);
+    --label-transform:      uppercase;
+    --label-color:          var(--color-text-tertiary);
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — STAKEHOLDER / INFO GRID
+     ------------------------------------------------------------ */
+  :root {
+    --info-grid-cols:       repeat(auto-fill, minmax(180px, 1fr));
+    --info-grid-gap:        var(--space-8);
+    --info-term-size:       var(--text-sm);
+    --info-term-weight:     var(--weight-semibold);
+    --info-desc-size:       var(--text-sm);
+    --info-desc-leading:    var(--leading-relaxed);
+  }
+  
+  /* ------------------------------------------------------------
+     COMPONENT TOKENS — LOGO BAR (client logos)
+     ------------------------------------------------------------ */
+  :root {
+    --logo-bar-bg:          var(--color-bg);
+    --logo-bar-padding-v:   var(--space-12);
+    --logo-bar-gap:         clamp(var(--space-10), 5vw, var(--space-20));
+    --logo-bar-filter:      grayscale(1) opacity(0.55);
+    --logo-bar-filter-hover:grayscale(0) opacity(1);
+  }
+  
+  /* ------------------------------------------------------------
+     IMAGES & MEDIA
+     ------------------------------------------------------------ */
+  :root {
+    --image-hero-aspect:    4 / 3;
+    --image-project-aspect: 16 / 10;
+    --image-thumb-aspect:   3 / 2;
+  
+    /* Duotone / editorial image treatment */
+    --image-filter-default: none;
+    --image-filter-hover:   none;          /* keep photographic integrity */
+  }
+  
+  /* ------------------------------------------------------------
+     PRINT / ACCESSIBILITY
+     ------------------------------------------------------------ */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --duration-fast:   0ms;
+      --duration-normal: 0ms;
+      --duration-slow:   0ms;
+      --duration-slower: 0ms;
+    }
+  }
+  
+  @media print {
+    :root {
+      --color-bg:   #ffffff;
+      --color-text: #000000;
+    }
+  }
