@@ -5,6 +5,7 @@ export interface Artwork {
   image: any
   description?: string
   year?: number
+  series?: string
 }
 
 export interface ArtistInfo {
