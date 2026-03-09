@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import { createClient } from "@sanity/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +8,7 @@ const client = createClient({
   projectId: "cpmtvctn",
   dataset: "production",
   apiVersion: "2024-01-01",
-  useCdn: true,
+  useCdn: false,
 });
 
 // ─── Types ────────────────────────────────────────────────────────────────────
