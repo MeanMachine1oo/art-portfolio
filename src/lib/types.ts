@@ -6,6 +6,9 @@ export interface Artwork {
   description?: string
   year?: number
   series?: string
+  medium?: string
+  dimensions?: string
+  forSale?: boolean
 }
 
 export interface ArtistInfo {
